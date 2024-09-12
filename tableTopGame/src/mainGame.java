@@ -1,6 +1,6 @@
 import javax.swing.JFrame;
 
-//ended tutorial at 13:07 - Sept 10, 2024
+//ended tutorial at 5:45 Game Loop and Key Input - Sept 12, 2024
 public class mainGame {
     public static void main(String[] args) throws Exception {
         JFrame window = new JFrame();
@@ -15,5 +15,7 @@ public class mainGame {
 
         window.setLocationRelativeTo(null); //null places window at screen center
         window.setVisible(true);
+
+        gamePanel.startGameThread();
     }
 }

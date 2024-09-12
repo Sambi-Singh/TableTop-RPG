@@ -1,9 +1,10 @@
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Color;
 import javax.swing.JPanel;
 
 //screen for the game
-public class GamePanel extends JPanel{
+public class GamePanel extends JPanel implements Runnable{
     //Screen settings
     final int originalTileSize = 16; //16 * 16 tile is used for most 2d games
 
@@ -19,6 +20,7 @@ public class GamePanel extends JPanel{
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
 
+    Thread gameThread; //Used to draw screen a number of times per second
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
@@ -26,7 +28,33 @@ public class GamePanel extends JPanel{
         
 
     }
-    //left off at around the 6 min mark on ryi snow video part 1
+
+    public void startGameThread(){
+        gameThread = new Thread(this);
+        gameThread.start(); //calls run method
+    }
+    //implementing runnable lets you use run method
+    //where game loop comes from
+    public void run(){
+        while(gameThread != null){
+
+            System.out.println("The game loop is running");
+            update();
+            repaint(); //call paint method with repaint.
+
+            //1. UPDATE : Change character position
+            // 2. DRAW SCREEN WITH UPDATE INFO - affected by fps
+        }
+
+    }
+
+    public void update(){
+
+    }
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+
+    }
 
     
 
