@@ -1,6 +1,6 @@
 import javax.swing.JFrame;
 
-//ended tutorial at 5:45 Game Loop and Key Input - Sept 12, 2024
+//ended tutorial at 18:00 Game Loop and Key Input - Sept 17, 2024
 public class mainGame {
     public static void main(String[] args) throws Exception {
         JFrame window = new JFrame();
